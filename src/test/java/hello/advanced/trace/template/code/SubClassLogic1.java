@@ -8,5 +8,6 @@ public class SubClassLogic1 extends AbstractTemplate{
     @Override
     protected void call() {
         log.info("비즈니스 로직1 실행");
+        ThreadLocal<String> threadLocal = new ThreadLocal<>();
     }
 }
