@@ -7,10 +7,15 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 @Repository
-@RequiredArgsConstructor
 public class OrderRepositoryV5 {
 
     private final LogTrace trace;
+    private final TraceCallbackTemplate template;
+
+    public OrderRepositoryV5(LogTrace trace) {
+        this.trace = trace;
+        this.template = new TraceCallbackTemplate(trace);
+    }
 
     public void save(String itemId) {
 
